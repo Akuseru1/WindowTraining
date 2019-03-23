@@ -1,3 +1,5 @@
+package Figuras;
+
 import java.lang.Math.*;
 public class Esfera extends Figura {
     private double radio;

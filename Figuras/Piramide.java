@@ -1,3 +1,5 @@
+package Figuras;
+
 public class Piramide extends Figura {
     private double base, altura, apotema;
 

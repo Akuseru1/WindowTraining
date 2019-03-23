@@ -1,3 +1,5 @@
+package Figuras;
+
 public class Figura {
     private double volumen, superficie;
 
