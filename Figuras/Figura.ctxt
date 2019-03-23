@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=Figura
-comment1.params=volumen
-comment1.target=void\ setVolumen(double)
-comment2.params=superficie
-comment2.target=void\ setSuperficie(double)
-comment3.params=
-comment3.target=double\ getVolumen()
-numComments=4
