@@ -1,19 +1,21 @@
+package GUI;
+
 
 /**
- * Write a description of class Ventana here.
+ * Write a description of class Window here.
  *
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Ventana
+public class Window
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Ventana
+     * Constructor for objects of class Window
      */
-    public Ventana()
+    public Window()
     {
         // initialise instance variables
         x = 0;
