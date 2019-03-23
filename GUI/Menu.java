@@ -17,14 +17,13 @@ public class Menu  {
         JPanel panel = new JPanel();
         JPanel rowPanel = new JPanel();
         JLabel title = new JLabel("Elija una figura: ", JLabel.CENTER);
-        
-        
+
         EmptyBorder border1 = new EmptyBorder(10, 10, 10, 10);
         String[] imagesPath = {
-            "../img/cilinder.png",
-            "../img/esfera.png",
-            "../img/piramide.png"
-        };
+                "../img/cilinder.png",
+                "../img/esfera.png",
+                "../img/piramide.png"
+            };
         JButton[] buttons = new JButton[3];
 
         rowPanel.setLayout(new GridLayout(2, 1));
@@ -32,8 +31,7 @@ public class Menu  {
         contenidoPanel.setBorder(border1);
         contenidoPanel.setLayout(new GridLayout(3, 1));
         rowPanel.add(title);
-        
-        
+
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton();
             try {
@@ -48,7 +46,6 @@ public class Menu  {
         buttons[1].addActionListener(new OyenteEsfera());
         buttons[2].addActionListener(new OyentePiramide());
 
-
         contenidoPanel.add(rowPanel);
         contenidoPanel.add(panel);
         frame.pack();
@@ -59,45 +56,44 @@ public class Menu  {
 
     public static void main(String args[]) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                Menu gui = new Menu();
-            }
-        });
+                public void run() {
+                    Menu gui = new Menu();
+                }
+            });
     }
-    
+
     class OyenteCilindro implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             boolean error = false;
-            PanelDatosAlumno panel = new PanelDatosAlumno();
-            if(JOptionPane.showConfirmDialog(null,panel,"Introduzca Figura",JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE) == JOptionPane.OK_OPTION) {
-               // String nombre = panel.campoNombre.getText();
-               // String apellidos = panel.campoApellidos.getText();
-               // int año = 0;
-                try {
-                    //año = Integer.parseInt(panel.campoAño.getText());
-                }
-                catch (Exception e) {
-                    error = true;   
-                }
-                finally {
-                   // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
-                    if(error)
-                        JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                }
-                char turno;
-                if(panel.mañana.isSelected())
-                    //turno = 'M';
-                //else
-                    //turno = 'T';
-                if(!error) {
-                   /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
-                    aplicacion.añadir(alumno); */
-                }
+            WindowCilindro panel = new WindowCilindro();
+
+            double radio = Double.parseDouble(panel.fieldRadio.getText());
+            double altura = Double.parseDouble(panel.fieldAltura.getText());
+            // int año = 0;
+            try {
+                //año = Integer.parseInt(panel.campoAño.getText());
             }
+            catch (Exception e) {
+                error = true;   
+            }
+            finally {
+                // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
+                if(error)
+                    JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            char turno;
+            //  if(panel.mañana.isSelected())
+            //turno = 'M';
+            //else
+            //turno = 'T';
+            if(!error) {
+                /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
+                aplicacion.añadir(alumno); */
+            }
+
             else {
-                    JOptionPane.showMessageDialog(null,"Operacion no realizada",
+                JOptionPane.showMessageDialog(null,"Operacion no realizada",
                     "Aviso",JOptionPane.WARNING_MESSAGE);
             }
         }
@@ -105,36 +101,34 @@ public class Menu  {
     class OyenteEsfera implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             boolean error = false;
-            PanelDatosAlumno panel = new PanelDatosAlumno();
-            if(JOptionPane.showConfirmDialog(null,panel,"Introduzca Figura",JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE) == JOptionPane.OK_OPTION) {
-               // String nombre = panel.campoNombre.getText();
-               // String apellidos = panel.campoApellidos.getText();
-               // int año = 0;
-                try {
-                    //año = Integer.parseInt(panel.campoAño.getText());
-                }
-                catch (Exception e) {
-                    error = true;   
-                }
-                finally {
-                   // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
-                    if(error)
-                        JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                }
-                char turno;
-                if(panel.mañana.isSelected())
-                    //turno = 'M';
-                //else
-                    //turno = 'T';
-                if(!error) {
-                   /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
-                    aplicacion.añadir(alumno); */
-                }
+            WindowEsfera panel = new WindowEsfera();
+            double radio = Double.parseDouble(panel.fieldRadio.getText());
+
+            // int año = 0;
+            try {
+                //año = Integer.parseInt(panel.campoAño.getText());
             }
+            catch (Exception e) {
+                error = true;   
+            }
+            finally {
+                // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
+                if(error)
+                    JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            char turno;
+            //if(panel.mañana.isSelected())
+            //turno = 'M';
+            //else
+            //turno = 'T';
+            if(!error) {
+                /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
+                aplicacion.añadir(alumno); */
+            }
+
             else {
-                    JOptionPane.showMessageDialog(null,"Operacion no realizada",
+                JOptionPane.showMessageDialog(null,"Operacion no realizada",
                     "Aviso",JOptionPane.WARNING_MESSAGE);
             }
         }
@@ -142,36 +136,35 @@ public class Menu  {
     class OyentePiramide implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             boolean error = false;
-            PanelDatosAlumno panel = new PanelDatosAlumno();
-            if(JOptionPane.showConfirmDialog(null,panel,"Introduzca Figura",JOptionPane.OK_CANCEL_OPTION,
-                JOptionPane.PLAIN_MESSAGE) == JOptionPane.OK_OPTION) {
-               // String nombre = panel.campoNombre.getText();
-               // String apellidos = panel.campoApellidos.getText();
-               // int año = 0;
-                try {
-                    //año = Integer.parseInt(panel.campoAño.getText());
-                }
-                catch (Exception e) {
-                    error = true;   
-                }
-                finally {
-                   // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
-                    if(error)
-                        JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
-                            "Error", JOptionPane.ERROR_MESSAGE);
-                }
-                char turno;
-                if(panel.mañana.isSelected())
-                    //turno = 'M';
-                //else
-                    //turno = 'T';
-                if(!error) {
-                   /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
-                    aplicacion.añadir(alumno); */
-                }
+            WindowPiramide panel = new WindowPiramide();
+
+            // String nombre = panel.campoNombre.getText();
+            // String apellidos = panel.campoApellidos.getText();
+            // int año = 0;
+            try {
+                //año = Integer.parseInt(panel.campoAño.getText());
             }
+            catch (Exception e) {
+                error = true;   
+            }
+            finally {
+                // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
+                if(error)
+                    JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            char turno;
+            //   if(panel.mañana.isSelected())
+            //turno = 'M';
+            //else
+            //turno = 'T';
+            if(!error) {
+                /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
+                aplicacion.añadir(alumno); */
+            }
+
             else {
-                    JOptionPane.showMessageDialog(null,"Operacion no realizada",
+                JOptionPane.showMessageDialog(null,"Operacion no realizada",
                     "Aviso",JOptionPane.WARNING_MESSAGE);
             }
         }

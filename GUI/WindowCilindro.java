@@ -5,6 +5,8 @@ import javax.swing.border.EmptyBorder;
 
 
 public class WindowCilindro {
+    JTextField fieldRadio;
+    JTextField fieldAltura;
     WindowCilindro() {
         JFrame frame = new JFrame("Cilindro");
         JPanel panelRadio = new JPanel();
@@ -16,8 +18,8 @@ public class WindowCilindro {
         JLabel labelAlturaCms = new JLabel("cms");
         JLabel labelAltura = new JLabel("Altura");
         JLabel title = new JLabel("Datos del cilindro: ", JLabel.CENTER);
-        JTextField fieldRadio = new JTextField(10);
-        JTextField fieldAltura = new JTextField(10);
+        fieldRadio = new JTextField(10);
+        fieldAltura = new JTextField(10);
         JButton calcularButton = new JButton("Calcular");
         EmptyBorder mainPanelBorder = new EmptyBorder(10, 10, 10, 10);
         EmptyBorder tituloPanelBorder = new EmptyBorder(0, 0, 10, 0);

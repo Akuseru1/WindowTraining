@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 
 
 public class WindowEsfera {
+    JTextField fieldRadio;
     WindowEsfera() {
         JFrame frame = new JFrame("Esfera");
         JPanel panelRadio = new JPanel();
@@ -13,7 +14,7 @@ public class WindowEsfera {
         JLabel labelRadio = new JLabel("Radio");
         JLabel labelRadioCms = new JLabel("cms");
         JLabel title = new JLabel("Datos esfera: ", JLabel.CENTER);
-        JTextField fieldRadio = new JTextField(10);
+        fieldRadio = new JTextField(10);
         JButton calcularButton = new JButton("Calcular");
         EmptyBorder mainPanelBorder = new EmptyBorder(10, 10, 10, 10);
         EmptyBorder tituloPanelBorder = new EmptyBorder(0, 0, 10, 0);
