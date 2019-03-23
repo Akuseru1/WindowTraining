@@ -32,6 +32,7 @@ public class Menu {
         contenidoPanel.setBorder(border1);
         contenidoPanel.setLayout(new GridLayout(3, 1));
         rowPanel.add(title);
+        
 
         for (int i = 0; i < buttons.length; i++) {
             buttons[i] = new JButton();
@@ -50,6 +51,8 @@ public class Menu {
         contenidoPanel.add(rowPanel);
         contenidoPanel.add(panel);
         frame.pack();
+        frame.setResizable(false);
+        frame.setSize(300,500);
         frame.setVisible(true);
     }
 
