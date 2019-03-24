@@ -2,9 +2,13 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.EmptyBorder;
-
+import java.awt.event.*;
+import Figuras.Piramide;
 
 public class WindowPiramide {
+     JTextField fieldBase;
+        JTextField fieldAltura;
+        JTextField fieldApotema;
     WindowPiramide() {
         JFrame frame = new JFrame("Piramide");
         JPanel panelBase = new JPanel();
@@ -19,9 +23,9 @@ public class WindowPiramide {
         JLabel labelApotemaCms = new JLabel("cms");
         JLabel labelApotema = new JLabel("Apotema");
         JLabel title = new JLabel("Datos de la piramide: ", JLabel.CENTER);
-        JTextField fieldBase = new JTextField(10);
-        JTextField fieldAltura = new JTextField(10);
-        JTextField fieldApotema = new JTextField(10);
+        fieldBase = new JTextField(10);
+        fieldAltura = new JTextField(10);
+        fieldApotema = new JTextField(10);
         JButton calcularButton = new JButton("Calcular");
         EmptyBorder mainPanelBorder = new EmptyBorder(10, 10, 10, 10);
         EmptyBorder tituloPanelBorder = new EmptyBorder(0, 0, 10, 0);
@@ -66,5 +70,35 @@ public class WindowPiramide {
     
     public static void main(String args[]) {
         WindowPiramide window = new WindowPiramide();
+    }
+    
+    class OyenteCalcPiramide implements ActionListener {
+        
+        public void actionPerformed(ActionEvent event) {
+             WindowResultado resultado;
+             Piramide piramide;
+             boolean error = false;
+             double base = 0;
+             double altura = 0;
+             double apotema = 0;
+            try {
+                base = Double.parseDouble(fieldBase.getText());
+                altura  = Double.parseDouble(fieldAltura.getText());
+                apotema = Double.parseDouble(fieldApotema.getText());
+            }catch (Exception e){ 
+                error = true;
+            }finally {
+          
+             if(error) {
+                 JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+                }else {
+                     piramide = new Piramide(base,altura,apotema);
+                     resultado = new WindowResultado();
+                    }
+            }
+            
+        }
+        
     }
 }

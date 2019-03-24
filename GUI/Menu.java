@@ -64,109 +64,17 @@ public class Menu  {
 
     class OyenteCilindro implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            boolean error = false;
             WindowCilindro panel = new WindowCilindro();
-
-            double radio = Double.parseDouble(panel.fieldRadio.getText());
-            double altura = Double.parseDouble(panel.fieldAltura.getText());
-            // int año = 0;
-            try {
-                //año = Integer.parseInt(panel.campoAño.getText());
-            }
-            catch (Exception e) {
-                error = true;   
-            }
-            finally {
-                // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
-                if(error)
-                    JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            char turno;
-            //  if(panel.mañana.isSelected())
-            //turno = 'M';
-            //else
-            //turno = 'T';
-            if(!error) {
-                /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
-                aplicacion.añadir(alumno); */
-            }
-
-            else {
-                JOptionPane.showMessageDialog(null,"Operacion no realizada",
-                    "Aviso",JOptionPane.WARNING_MESSAGE);
-            }
         }
     }
     class OyenteEsfera implements ActionListener {
-        public void actionPerformed(ActionEvent event) {
-            boolean error = false;
+        public void actionPerformed(ActionEvent event) {            
             WindowEsfera panel = new WindowEsfera();
-            double radio = Double.parseDouble(panel.fieldRadio.getText());
-
-            // int año = 0;
-            try {
-                //año = Integer.parseInt(panel.campoAño.getText());
-            }
-            catch (Exception e) {
-                error = true;   
-            }
-            finally {
-                // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
-                if(error)
-                    JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            char turno;
-            //if(panel.mañana.isSelected())
-            //turno = 'M';
-            //else
-            //turno = 'T';
-            if(!error) {
-                /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
-                aplicacion.añadir(alumno); */
-            }
-
-            else {
-                JOptionPane.showMessageDialog(null,"Operacion no realizada",
-                    "Aviso",JOptionPane.WARNING_MESSAGE);
-            }
         }
     }
     class OyentePiramide implements ActionListener {
         public void actionPerformed(ActionEvent event) {
-            boolean error = false;
             WindowPiramide panel = new WindowPiramide();
-
-            // String nombre = panel.campoNombre.getText();
-            // String apellidos = panel.campoApellidos.getText();
-            // int año = 0;
-            try {
-                //año = Integer.parseInt(panel.campoAño.getText());
-            }
-            catch (Exception e) {
-                error = true;   
-            }
-            finally {
-                // error = error || (nombre.length() == 0) || (apellidos.length() == 0);
-                if(error)
-                    JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
-                        "Error", JOptionPane.ERROR_MESSAGE);
-            }
-            char turno;
-            //   if(panel.mañana.isSelected())
-            //turno = 'M';
-            //else
-            //turno = 'T';
-            if(!error) {
-                /* Alumno alumno = new Alumno(nombre,apellidos,año,turno);
-                aplicacion.añadir(alumno); */
-            }
-
-            else {
-                JOptionPane.showMessageDialog(null,"Operacion no realizada",
-                    "Aviso",JOptionPane.WARNING_MESSAGE);
-            }
         }
     }
 }

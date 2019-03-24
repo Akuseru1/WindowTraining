@@ -3,8 +3,12 @@ package Figuras;
 public class Piramide extends Figura {
     private double base, altura, apotema;
 
-    public Piramide() {
-
+    public Piramide(double base,double altura,double apotema) {
+        this.base = base;
+        this.altura = altura;
+        this.apotema = apotema;
+        calcVol();
+        calcSup();
     }
 
     public void calcVol() {

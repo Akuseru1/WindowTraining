@@ -4,11 +4,13 @@ import java.lang.Math.*;
 public class Esfera extends Figura {
     private double radio;
 
-    Esfera() {
-
+    public Esfera(double radio) {
+        this.radio = radio;
+        calcVol();
+        calcSup();
     }
 
-    public void cacVol() {
+    public void calcVol() {
         setVolumen(((4 / 3) * Math.PI * Math.pow(radio, 3)));
     }
 

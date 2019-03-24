@@ -2,7 +2,8 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.EmptyBorder;
-
+import java.awt.event.*;
+import Figuras.Cilindro;
 
 public class WindowCilindro {
     JTextField fieldRadio;
@@ -52,8 +53,37 @@ public class WindowCilindro {
         frame.setResizable(false);
         frame.setVisible(true);
     }
-    
+
     public static void main(String args[]) {
         WindowCilindro window = new WindowCilindro();
+    }
+
+    class OyenteCalcCilindro implements ActionListener {
+
+        public void actionPerformed(ActionEvent event) {
+            WindowResultado resultado;
+            Cilindro cilindro;
+            boolean error = false;
+            double radio = 0;
+            double altura = 0;
+
+            try {
+                radio  = Double.parseDouble(fieldRadio.getText());
+                altura  = Double.parseDouble(fieldAltura.getText());
+            }catch (Exception e){ 
+                error = true;
+            }finally {
+
+                if(error) {
+                    JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                }else {
+                    cilindro = new Cilindro(radio,altura);
+                    resultado = new WindowResultado();
+                }
+            }
+
+        }
+
     }
 }

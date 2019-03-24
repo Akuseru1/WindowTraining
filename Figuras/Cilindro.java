@@ -4,9 +4,11 @@ import java.lang.Math.*;
 public class Cilindro extends Figura {
     private double radio , altura;
      
-    Cilindro (double radio,double altura) {
+    public Cilindro (double radio,double altura) {
         this.radio = radio;
         this.altura = altura;
+        calcVol();
+        calcSup();
     }
     
     public void calcVol() {
