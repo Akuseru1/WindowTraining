@@ -16,7 +16,7 @@ public class WindowPiramide {
         JPanel panelTitulo = new JPanel();
         JPanel panelApotema = new JPanel();
         JPanel panelBotones = new JPanel();
-        JLabel labelBase = new JLabel("Radio");
+        JLabel labelBase = new JLabel("Base");
         JLabel labelBaseCms = new JLabel("cms");
         JLabel labelAlturaCms = new JLabel("cms");
         JLabel labelAltura = new JLabel("Altura");
@@ -27,6 +27,7 @@ public class WindowPiramide {
         fieldAltura = new JTextField(10);
         fieldApotema = new JTextField(10);
         JButton calcularButton = new JButton("Calcular");
+        calcularButton.addActionListener(new OyenteCalcPiramide());
         EmptyBorder mainPanelBorder = new EmptyBorder(10, 10, 10, 10);
         EmptyBorder tituloPanelBorder = new EmptyBorder(0, 0, 10, 0);
         EmptyBorder alturaPanelBorder = new EmptyBorder(5, 0, 0, 0);
@@ -94,7 +95,7 @@ public class WindowPiramide {
                     "Error", JOptionPane.ERROR_MESSAGE);
                 }else {
                      piramide = new Piramide(base,altura,apotema);
-                     resultado = new WindowResultado();
+                     resultado = new WindowResultado(piramide.getSuperficie(),piramide.getVolumen());
                     }
             }
             

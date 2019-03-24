@@ -11,7 +11,7 @@ public class Esfera extends Figura {
     }
 
     public void calcVol() {
-        setVolumen(((4 / 3) * Math.PI * Math.pow(radio, 3)));
+        setVolumen((4.0 / 3.0) * Math.PI * Math.pow(radio, 3.0));
     }
 
     public void calcSup() {

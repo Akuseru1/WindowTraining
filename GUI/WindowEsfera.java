@@ -67,7 +67,7 @@ public class WindowEsfera {
                         "Error", JOptionPane.ERROR_MESSAGE);
                 }else {
                     esfera = new Esfera(radio);
-                    resultado = new WindowResultado();
+                    resultado = new WindowResultado(esfera.getSuperficie(),esfera.getVolumen());
                 }
             }
 

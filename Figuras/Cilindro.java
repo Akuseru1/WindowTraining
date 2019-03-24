@@ -12,15 +12,12 @@ public class Cilindro extends Figura {
     }
     
     public void calcVol() {
-        setVolumen((Math.PI * altura * Math.pow(radio, 2)));
+        setVolumen((Math.PI * altura * Math.pow(radio, 2.0)));
     }
     
     public void calcSup() {
-        double areaL , areaB;
-       
-        areaL = 2 * Math.PI * radio * altura;
-        areaB = Math.PI * Math.pow(radio, 2);
-        
+        double areaL = 2.0 * Math.PI * radio * altura , areaB = 2.0 * Math.PI * Math.pow(radio, 2.0);
+      
         setSuperficie((areaL + areaB));
     }
 }

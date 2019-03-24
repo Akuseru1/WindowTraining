@@ -22,6 +22,7 @@ public class WindowCilindro {
         fieldRadio = new JTextField(10);
         fieldAltura = new JTextField(10);
         JButton calcularButton = new JButton("Calcular");
+        calcularButton.addActionListener(new OyenteCalcCilindro());
         EmptyBorder mainPanelBorder = new EmptyBorder(10, 10, 10, 10);
         EmptyBorder tituloPanelBorder = new EmptyBorder(0, 0, 10, 0);
         EmptyBorder alturaPanelBorder = new EmptyBorder(5, 0, 10, 0);
@@ -79,7 +80,7 @@ public class WindowCilindro {
                         "Error", JOptionPane.ERROR_MESSAGE);
                 }else {
                     cilindro = new Cilindro(radio,altura);
-                    resultado = new WindowResultado();
+                    resultado = new WindowResultado(cilindro.getSuperficie(),cilindro.getVolumen());
                 }
             }
 

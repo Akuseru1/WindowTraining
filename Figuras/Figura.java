@@ -14,4 +14,7 @@ public class Figura {
     public double getVolumen() {
         return volumen;
     }
+    public double getSuperficie() {
+        return superficie;
+    }
 }

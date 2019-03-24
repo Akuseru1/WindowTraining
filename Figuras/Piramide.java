@@ -12,13 +12,13 @@ public class Piramide extends Figura {
     }
 
     public void calcVol() {
-        double areaB = Math.pow(base, 2);
+        double areaB = Math.pow(base, 2.0);
         
-        setVolumen(((areaB * altura) / 3));
+        setVolumen(((areaB * altura) / 3.0));
     }
 
     public void calcSup() {
-        double areaB = Math.pow(base, 2) , areaL = (4 * base * apotema) / 2;
+        double areaB = Math.pow(base, 2.0) , areaL = (4.0 * base * apotema) / 2.0;
         
         setSuperficie(areaL + areaB);
     }
