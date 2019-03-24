@@ -23,4 +23,8 @@ public class Cilindro extends Figura {
       
         return areaL + areaB;
     }
+    
+    public String toString() {
+        return "CILINDRO\nRadio: " + this.radio + " cms\nAltura: " + this.altura + " cms\n" + super.toString();
+    }
 }

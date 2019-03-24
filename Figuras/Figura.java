@@ -12,9 +12,13 @@ public class Figura {
     }
 
     public double getVolumen() {
-        return volumen;
+        return this.volumen;
     }
     public double getSuperficie() {
-        return superficie;
+        return this.superficie;
+    }
+    
+    public String toString() {
+        return "Volumen: " + String.format("%10.3f", this.volumen) + " cms^3\nArea: " + String.format("%10.3f", this.superficie) + " cms^2\n";
     }
 }

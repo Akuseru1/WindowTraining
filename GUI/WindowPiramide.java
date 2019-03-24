@@ -4,13 +4,18 @@ import java.awt.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.*;
 import Figuras.Piramide;
+import java.io.*;
+import java.nio.file.Paths;
+import java.nio.file.Path;
 
 public class WindowPiramide {
     private JTextField fieldBase;
     private JTextField fieldAltura;
     private JTextField fieldApotema;
+    private String pathDirectory;
 
-    WindowPiramide() {
+    WindowPiramide(String pathDirectory) {
+        this.pathDirectory = pathDirectory;
         JFrame frame = new JFrame("Piramide");
         JPanel panelBase = new JPanel();
         JPanel panelAltura = new JPanel();
@@ -93,6 +98,16 @@ public class WindowPiramide {
                 } else {
                     piramide = new Piramide(base, altura, apotema);
                     resultado = new WindowResultado(piramide.getSuperficie(), piramide.getVolumen());
+                    Path filePath = Paths.get(pathDirectory,"figuras.txt");
+                    FileWriter escribir;
+                    try {
+                        escribir = new FileWriter(filePath.toString());
+                        escribir.write(piramide.toString());
+                        escribir.close();
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(null,"Imposible abrir el archivo",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
 

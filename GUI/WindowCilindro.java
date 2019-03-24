@@ -4,12 +4,17 @@ import java.awt.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.*;
 import Figuras.Cilindro;
+import java.io.*;
+import java.nio.file.Paths;
+import java.nio.file.Path;
 
 public class WindowCilindro {
     private JTextField fieldRadio;
     private JTextField fieldAltura;
+    private String pathDirectory;
 
-    WindowCilindro() {
+    WindowCilindro(String pathDirectory) {
+        this.pathDirectory = pathDirectory;
         JFrame frame = new JFrame("Cilindro");
         JPanel panelRadio = new JPanel();
         JPanel panelAltura = new JPanel();
@@ -75,9 +80,19 @@ public class WindowCilindro {
                 if(error) {
                     JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
                         "Error", JOptionPane.ERROR_MESSAGE);
-                }else {
+                } else {
                     cilindro = new Cilindro(radio,altura);
                     resultado = new WindowResultado(cilindro.getSuperficie(),cilindro.getVolumen());
+                    Path filePath = Paths.get(pathDirectory,"figuras.txt");
+                    FileWriter escribir;
+                    try {
+                        escribir = new FileWriter(filePath.toString());
+                        escribir.write(cilindro.toString());
+                        escribir.close();
+                    } catch (IOException e) {
+                        JOptionPane.showMessageDialog(null,"Imposible abrir el archivo",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
 

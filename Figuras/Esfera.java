@@ -21,4 +21,8 @@ public class Esfera extends Figura {
         
         return superficie;
     }
+    
+    public String toString() {
+        return "ESFERA\nRadio: " + this.radio + " cms\n" + super.toString();
+    }
 }

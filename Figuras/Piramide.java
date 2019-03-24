@@ -24,5 +24,9 @@ public class Piramide extends Figura {
 
         return areaB + areaL;
     }
+    
+    public String toString() {
+        return "PIRAMIDE\nBase: " + this.base + " cms\nAltura: " + this.altura + " cms\n" + "Apotema: " + this.apotema + " cms\n" + super.toString();
+    }
 
 }
