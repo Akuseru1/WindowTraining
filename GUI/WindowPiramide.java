@@ -6,9 +6,10 @@ import java.awt.event.*;
 import Figuras.Piramide;
 
 public class WindowPiramide {
-     JTextField fieldBase;
-        JTextField fieldAltura;
-        JTextField fieldApotema;
+    private JTextField fieldBase;
+    private JTextField fieldAltura;
+    private JTextField fieldApotema;
+
     WindowPiramide() {
         JFrame frame = new JFrame("Piramide");
         JPanel panelBase = new JPanel();
@@ -68,38 +69,34 @@ public class WindowPiramide {
         frame.setResizable(false);
         frame.setVisible(true);
     }
-    
-    public static void main(String args[]) {
-        WindowPiramide window = new WindowPiramide();
-    }
-    
+
     class OyenteCalcPiramide implements ActionListener {
-        
+
         public void actionPerformed(ActionEvent event) {
-             WindowResultado resultado;
-             Piramide piramide;
-             boolean error = false;
-             double base = 0;
-             double altura = 0;
-             double apotema = 0;
+            WindowResultado resultado;
+            Piramide piramide;
+            boolean error = false;
+            double base = 0;
+            double altura = 0;
+            double apotema = 0;
             try {
                 base = Double.parseDouble(fieldBase.getText());
-                altura  = Double.parseDouble(fieldAltura.getText());
+                altura = Double.parseDouble(fieldAltura.getText());
                 apotema = Double.parseDouble(fieldApotema.getText());
-            }catch (Exception e){ 
+            } catch (Exception e) {
                 error = true;
-            }finally {
-          
-             if(error) {
-                 JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
-                    "Error", JOptionPane.ERROR_MESSAGE);
-                }else {
-                     piramide = new Piramide(base,altura,apotema);
-                     resultado = new WindowResultado(piramide.getSuperficie(),piramide.getVolumen());
-                    }
+            } finally {
+
+                if (error) {
+                    JOptionPane.showMessageDialog(null, "Campo vacio o error en formato de numero",
+                        "Error", JOptionPane.ERROR_MESSAGE);
+                } else {
+                    piramide = new Piramide(base, altura, apotema);
+                    resultado = new WindowResultado(piramide.getSuperficie(), piramide.getVolumen());
+                }
             }
-            
+
         }
-        
+
     }
 }

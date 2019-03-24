@@ -17,7 +17,6 @@ public class Menu  {
         JPanel panel = new JPanel();
         JPanel rowPanel = new JPanel();
         JLabel title = new JLabel("Elija una figura: ", JLabel.CENTER);
-
         EmptyBorder border1 = new EmptyBorder(10, 10, 10, 10);
         String[] imagesPath = {
                 "../img/cilinder.png",
@@ -42,6 +41,7 @@ public class Menu  {
             }
             panel.add(buttons[i]);
         }
+
         buttons[0].addActionListener(new OyenteCilindro());
         buttons[1].addActionListener(new OyenteEsfera());
         buttons[2].addActionListener(new OyentePiramide());
@@ -50,16 +50,8 @@ public class Menu  {
         contenidoPanel.add(panel);
         frame.pack();
         frame.setResizable(false);
-        frame.setSize(300,500);
+        frame.setSize(300, 500);
         frame.setVisible(true);
-    }
-
-    public static void main(String args[]) {
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-                public void run() {
-                    Menu gui = new Menu();
-                }
-            });
     }
 
     class OyenteCilindro implements ActionListener {
@@ -67,11 +59,13 @@ public class Menu  {
             WindowCilindro panel = new WindowCilindro();
         }
     }
+
     class OyenteEsfera implements ActionListener {
         public void actionPerformed(ActionEvent event) {            
             WindowEsfera panel = new WindowEsfera();
         }
     }
+
     class OyentePiramide implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             WindowPiramide panel = new WindowPiramide();

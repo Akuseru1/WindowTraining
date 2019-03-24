@@ -1,23 +1,26 @@
 package Figuras;
 
-import java.lang.Math.*;
 public class Cilindro extends Figura {
-    private double radio , altura;
+    private double radio, altura;
      
-    public Cilindro (double radio,double altura) {
+    public Cilindro(double radio, double altura) {
         this.radio = radio;
         this.altura = altura;
-        calcVol();
-        calcSup();
+
+        this.setVolumen(this.calcVol());
+        this.setSuperficie(this.calcSup());
     }
     
-    public void calcVol() {
-        setVolumen((Math.PI * altura * Math.pow(radio, 2.0)));
+    public double calcVol() {
+        double volumen = Math.PI * this.altura * Math.pow(this.radio, 2.0);
+        
+        return volumen;
     }
     
-    public void calcSup() {
-        double areaL = 2.0 * Math.PI * radio * altura , areaB = 2.0 * Math.PI * Math.pow(radio, 2.0);
+    public double calcSup() {
+        double areaL = 2.0 * Math.PI * this.radio * this.altura;
+        double areaB = 2.0 * Math.PI * Math.pow(this.radio, 2.0);
       
-        setSuperficie((areaL + areaB));
+        return areaL + areaB;
     }
 }

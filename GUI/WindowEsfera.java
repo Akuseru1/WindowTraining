@@ -1,5 +1,4 @@
 package GUI;
-
 import javax.swing.*;
 import java.awt.*;
 import javax.swing.border.EmptyBorder;
@@ -8,6 +7,7 @@ import Figuras.Esfera;
 
 public class WindowEsfera {
     JTextField fieldRadio;
+
     WindowEsfera() {
         JFrame frame = new JFrame("Esfera");
         JPanel panelRadio = new JPanel();
@@ -44,10 +44,6 @@ public class WindowEsfera {
         frame.setVisible(true);
     }
 
-    public static void main(String args[]) {
-        WindowEsfera window = new WindowEsfera();
-    }
-
     class OyenteCalcEsfera implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
@@ -58,16 +54,15 @@ public class WindowEsfera {
 
             try {
                 radio  = Double.parseDouble(fieldRadio.getText());
-            }catch (Exception e){ 
+            } catch (Exception e){ 
                 error = true;
-            }finally {
-
+            } finally {
                 if(error) {
                     JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
                         "Error", JOptionPane.ERROR_MESSAGE);
-                }else {
+                } else {
                     esfera = new Esfera(radio);
-                    resultado = new WindowResultado(esfera.getSuperficie(),esfera.getVolumen());
+                    resultado = new WindowResultado(esfera.getSuperficie(), esfera.getVolumen());
                 }
             }
 

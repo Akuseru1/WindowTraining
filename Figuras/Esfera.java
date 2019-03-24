@@ -1,20 +1,24 @@
 package Figuras;
 
-import java.lang.Math.*;
 public class Esfera extends Figura {
     private double radio;
 
     public Esfera(double radio) {
         this.radio = radio;
-        calcVol();
-        calcSup();
+
+        this.setVolumen(this.calcVol());
+        this.setSuperficie(this.calcSup());
     }
 
-    public void calcVol() {
-        setVolumen((4.0 / 3.0) * Math.PI * Math.pow(radio, 3.0));
+    public double calcVol() {
+        double volumen = 1.33333333 * Math.PI * Math.pow(this.radio, 3.0);
+        
+        return volumen;
     }
 
-    public void calcSup() {
-        setSuperficie((4 * Math.PI * Math.pow(radio, 2)));
+    public double calcSup() {
+        double superficie = 4.0 * Math.PI * Math.pow(this.radio, 2.0);
+        
+        return superficie;
     }
 }

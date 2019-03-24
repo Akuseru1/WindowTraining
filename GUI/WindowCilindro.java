@@ -6,8 +6,9 @@ import java.awt.event.*;
 import Figuras.Cilindro;
 
 public class WindowCilindro {
-    JTextField fieldRadio;
-    JTextField fieldAltura;
+    private JTextField fieldRadio;
+    private JTextField fieldAltura;
+
     WindowCilindro() {
         JFrame frame = new JFrame("Cilindro");
         JPanel panelRadio = new JPanel();
@@ -55,10 +56,6 @@ public class WindowCilindro {
         frame.setVisible(true);
     }
 
-    public static void main(String args[]) {
-        WindowCilindro window = new WindowCilindro();
-    }
-
     class OyenteCalcCilindro implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
@@ -71,9 +68,9 @@ public class WindowCilindro {
             try {
                 radio  = Double.parseDouble(fieldRadio.getText());
                 altura  = Double.parseDouble(fieldAltura.getText());
-            }catch (Exception e){ 
+            } catch (Exception e){ 
                 error = true;
-            }finally {
+            } finally {
 
                 if(error) {
                     JOptionPane.showMessageDialog(null,"Campo vacio o error en formato de numero",
