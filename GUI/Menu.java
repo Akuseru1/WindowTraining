@@ -28,7 +28,7 @@ public class Menu {
         JPanel rowPanel = new JPanel();
         JPanel folderPanel = new JPanel();
         JPanel titleFolderPanel = new JPanel();
-        JLabel title = new JLabel("Elija una figura: ", JLabel.CENTER);
+        JLabel title = new JLabel("Elija un directorio y luego una figura: ", JLabel.CENTER);
         EmptyBorder border1 = new EmptyBorder(10, 10, 10, 10);
         String[] imagesPath = {
             "../img/cilinder.png",
